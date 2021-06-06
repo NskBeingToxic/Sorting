@@ -7,10 +7,12 @@ class MergeSort {
             System.out.print(a[k]+"---");
     }
     public static void mergeSort(int[] a, int start, int end){
-        int mid=(start+end)/2;
-        mergeSort(a,start,mid);
-        mergeSort(a,mid+1,end);
-        merge(a,start,mid,end);
+        if(start<end){
+            int mid=(start+end)/2;
+            mergeSort(a,start,mid);
+            mergeSort(a,mid+1,end);
+            merge(a,start,mid,end);
+        }
     }
     public static void merge(int[] a, int start, int mid, int end){
         int n1=mid-start+1;
